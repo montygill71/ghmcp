@@ -105,9 +105,5 @@ if __name__ == "__main__":
     print("Starting GitHub MCP")
     #mcp.run(transport="stdio")
     # Create config for streamable-http
-    mcp.run(
-        transport="streamable-http",
-        host="0.0.0.0",
-        port=int(os.environ.get("PORT", "8000")),
-    )
+    mcp.run(transport="streamable-http")
     print("Finished GitHub MCP")
