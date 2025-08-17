@@ -1,0 +1,2 @@
+# ghmcp
+gh mcp server
