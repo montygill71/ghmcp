@@ -1,6 +1,6 @@
 import base64
 from dotenv import load_dotenv
-from mcp.server.fastmcp import FastMCP, MCPConfig # type: ignore
+from mcp.server.fastmcp import FastMCP # type: ignore
 import os
 import requests
 load_dotenv()
@@ -105,11 +105,9 @@ if __name__ == "__main__":
     print("Starting GitHub MCP")
     #mcp.run(transport="stdio")
     # Create config for streamable-http
-    config = MCPConfig(
+    mcp.run(
         transport="streamable-http",
         host="0.0.0.0",
         port=int(os.environ.get("PORT", "8000")),
     )
-
-    mcp.run(config=config)
     print("Finished GitHub MCP")
