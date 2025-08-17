@@ -1,6 +1,6 @@
 import base64
 from dotenv import load_dotenv
-from mcp.server.fastmcp import FastMCP # type: ignore
+from mcp.server.fastmcp import FastMCP, MCPConfig # type: ignore
 import os
 import requests
 load_dotenv()
@@ -104,9 +104,12 @@ def get_remote_code_from_single_file(repo_owner, repo_name, path, branch_name="m
 if __name__ == "__main__":
     print("Starting GitHub MCP")
     #mcp.run(transport="stdio")
-    mcp.run(
+    # Create config for streamable-http
+    config = MCPConfig(
         transport="streamable-http",
         host="0.0.0.0",
         port=int(os.environ.get("PORT", "8000")),
     )
+
+    mcp.run(config=config)
     print("Finished GitHub MCP")
