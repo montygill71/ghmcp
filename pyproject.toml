@@ -1,0 +1,10 @@
+[project]
+name = "mcp-github"
+version = "0.1.0"
+description = "MCP GitHub Project"
+requires-python = ">=3.10"
+dependencies = [
+    # From binance-mcp
+    "mcp[cli]==1.9.2",
+    "requests==2.32.3", # Also for llm-tool-use
+]
